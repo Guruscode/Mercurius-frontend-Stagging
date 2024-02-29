@@ -40,20 +40,20 @@ const CountDown = () => {
     };
   });
   return (
-    <div className="w-fit flex flex-row justify-between items-stretch gap-1 p-2 sm:p-4 md:text-6xl text-[#333]">
-      <div className="p-1 sm:p-4 bg-black/70 text-white font-bold sm:font-normal sm:text-5xl rounded font-mono flex items-end">
+    <div className="w-fit flex flex-row justify-between items-stretch gap-1 p-2 sm:p-4 md:text-4xl text-[#333] md:mr-8 sm:mt-12 mt-4">
+      <div className="p-1 sm:p-4 bg-black/70 text-white font-bold sm:font-normal sm:text-3xl rounded font-mono flex items-end">
         {countdownDay} <span className="text-[.7rem] sm:text-2xl">days</span>
       </div>
       :
-      <div className="p-1 sm:p-4 bg-black/70 text-white font-bold sm:font-normal sm:text-5xl rounded font-mono flex items-end">
+      <div className="p-1 sm:p-4 bg-black/70 text-white font-bold sm:font-normal sm:text-3xl rounded font-mono flex items-end">
         {countdownHour} <span className="text-[.7rem] sm:text-2xl">Hrs</span>
       </div>
       :
-      <div className="p-1 sm:p-4 bg-black/70 text-white font-bold sm:font-normal sm:text-5xl rounded font-mono flex items-end">
+      <div className="p-1 sm:p-4 bg-black/70 text-white font-bold sm:font-normal sm:text-3xl rounded font-mono flex items-end">
         {countdownMinute} <span className="text-[.7rem] sm:text-2xl">Mins</span>
       </div>
       :
-      <div className="p-1 sm:p-4 bg-black/70 text-white font-bold sm:font-normal sm:text-5xl rounded font-mono flex items-end">
+      <div className="p-1 sm:p-4 bg-black/70 text-white font-bold sm:font-normal sm:text-3xl rounded font-mono flex items-end">
         {countdownSecond} <span className="text-[.7rem] sm:text-2xl">Secs</span>
       </div>
     </div>

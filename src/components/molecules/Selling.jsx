@@ -111,30 +111,31 @@ const bests = [
     price: "$900",
   },
 ];
-export const Selling = function ({products}) {
+export const Selling = function ({ products }) {
   console.log(products);
   return (
-    <div className="w-full">
+    <div className="w-full h-full bg-red-500 relative">
+      <p>Produces</p>
       {/* <p className="font-semibold text-[1.2rem]">{title}</p> */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
         {products?.map((product, i) => {
           return (
             // <Link to="/product-view">
-              <div key={product.id} className="w-full">
-                <div
-                  key={i}
-                  className="p-4 bg-[#f6f6f6] w-full flex flex-col items-center justify-center"
-                >
-                  <BsHeart className="w-4 h-4 self-end cursor-pointer text-black/40" />
-                  <img className="w-[80%]] my-4" src={product.image} alt="" />
-                  <p className="w-[80%] text-center text-sm">{product.name}</p>
-                  <p className="text-sm font-semibold">{product.price}</p>
-                  <p className="text-sm font-semibold">{product.title}</p>
-                  <button className="text-sm text-white bg-[#1b1b1b] hover:bg-[#1e1e1ebb]/70 p-2 mt-2 rounded-md">
-                    Add to Cart
-                  </button>
-                </div>
+            <div key={product.id} className="w-full">
+              <div
+                key={i}
+                className="p-4 bg-[#f6f6f6] w-full flex flex-col items-center justify-center"
+              >
+                <BsHeart className="w-4 h-4 self-end cursor-pointer text-black/40" />
+                <img className="w-[80%]] my-4" src={product.image} alt="" />
+                <p className="w-[80%] text-center text-sm">{product.name}</p>
+                <p className="text-sm font-semibold">{product.price}</p>
+                <p className="text-sm font-semibold">{product.title}</p>
+                <button className="text-sm text-white bg-[#1b1b1b] hover:bg-[#1e1e1ebb]/70 p-2 mt-2 rounded-md">
+                  Add to Cart
+                </button>
               </div>
+            </div>
             // </Link>
           );
         })}
