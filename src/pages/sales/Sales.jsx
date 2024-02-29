@@ -22,20 +22,20 @@ const Sales = () => {
   return (
     <div className="my-4 p-2 sm:px-12">
       <div
-        className="w-full min-h-[500px] rounded flex justify-center my-4"
+        className="w-full min-h-[150px] sm:min-h-[500px] rounded flex justify-center my-4"
         style={{
           background: `url(${Sale})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <p className="w-1/5 h-[100px] rounded-[100%] bg-red-600 mt-12 flex justify-center items-center font-serif font-bold text-2xl text-white">
+        <p className="w-2/4 sm:w-1/5 max-h-[40px] sm:max-h-[100px] rounded-[100%] bg-red-600 mt-2 sm:mt-12 flex justify-center items-center font-serif font-bold sm:text-2xl text-white">
           Mega Sales
         </p>
       </div>
       <div className="my-4">
         <p className="font-semibold text-[1.2rem]">Category Offers</p>
-        <div className="flex flex-row justify-between gap-4 my-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-4">
           {apparel.map((item) => {
             return (
               <figure className="relative rounded-t bg-gray-400/20 w-full">
@@ -56,8 +56,13 @@ const Sales = () => {
       <div className="my-4">
         <p className="font-semibold text-[1.2rem]">Special Offers</p>
         <div
-          className="w-full min-h-[500px] rounded flex justify-end items-start"
-          style={{ background: `url(${Flash})` }}
+          className="w-full min-h-[120px] sm:min-h-[500px] rounded flex justify-end items-end sm:items-center md:items-start"
+          style={{
+            background: `url(${Flash})`,
+            backgroundSize: "contain",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
         >
           <CountDown />
         </div>

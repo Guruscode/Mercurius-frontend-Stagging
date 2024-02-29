@@ -93,11 +93,11 @@ const Apparels = () => {
       <div className="main_content">
         <div className="my-4 grid">
           <h2 className="font-semibold text-[1.2rem] my-4">Men</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {apparel.map((item) => {
               return (
                 <div className="text-center flex flex-col items-center justify-center">
-                  <figure className="sm:w-[180px] sm:h-[180px] bg-gray-100 rounded-full flex flex-col justify-center items-center">
+                  <figure className="w-1/2 sm:w-[180px] sm:h-[180px] md:bg-gray-100 rounded-full flex flex-col justify-center items-center">
                     <img className="" src={item.src} alt="/" />
                   </figure>
                   <p className="text-[1.1rem]">{item.product}</p>
@@ -108,11 +108,11 @@ const Apparels = () => {
         </div>
         <div className="my-4 grid">
           <h2 className="font-semibold text-[1.2rem] my-4">Women</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 justify-center items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 justify-center items-center">
             {apparel.map((item) => {
               return (
                 <div className="text-center flex flex-col items-center justify-center">
-                  <figure className="sm:w-[180px] sm:h-[180px] bg-gray-100 rounded-full flex flex-col justify-center items-center">
+                  <figure className="w-1/2 sm:w-[180px] sm:h-[180px] md:bg-gray-100 rounded-full flex flex-col justify-center items-center">
                     <img className="" src={item.src} alt="/" />
                   </figure>
                   <p className="text-[1.1rem]">{item.product}</p>
@@ -123,11 +123,11 @@ const Apparels = () => {
         </div>
         <div className="my-4 grid">
           <h2 className="font-semibold text-[1.2rem] my-4">Kids</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 justify-center items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 justify-center items-center">
             {apparel.map((item) => {
               return (
                 <div className="text-center flex flex-col items-center justify-center">
-                  <figure className="sm:w-[180px] sm:h-[180px] bg-gray-100 rounded-full flex flex-col justify-center items-center">
+                  <figure className="w-1/2 sm:w-[180px] sm:h-[180px] md:bg-gray-100 rounded-full flex flex-col justify-center items-center">
                     <img className="" src={item.src} alt="/" />
                   </figure>
                   <p className="text-[1.1rem]">{item.product}</p>
@@ -139,7 +139,7 @@ const Apparels = () => {
       </div>
       <div className="brands">
         <h2 className="font-semibold text-[1.2rem] my-4">Shop by Brand</h2>
-        <div className="my-4 grid grid-cols-2 sm:grid-cols-5 gap-4">
+        <div className="my-4 grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-4">
           {brands
             .filter((items) => items.category === "clothing")
             .map((items) => {

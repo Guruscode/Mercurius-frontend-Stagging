@@ -21,14 +21,14 @@ const NewIns = () => {
     <div className="px-2 py-3 sm:px-12">
       <h2 className="font-semibold text-[1.2rem] my-4">Shop by Category</h2>
       <div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 justify-center items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 justify-center items-center">
           {apparel.map((item) => {
             return (
               <div
                 key={item.id}
                 className="text-center flex flex-col items-center justify-center"
               >
-                <figure className="sm:w-[180px] sm:h-[180px] bg-gray-100 rounded-full flex flex-col justify-center items-center">
+                <figure className="w-1/2 sm:min-w-[160px] sm:min-h-[160px] md:bg-gray-100 rounded-full flex flex-col justify-center items-center">
                   <img className="" src={item.src} alt="/" />
                 </figure>
                 <p className="text-[1.1rem]">{item.product}</p>

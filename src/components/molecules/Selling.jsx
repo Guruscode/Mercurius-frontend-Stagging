@@ -112,14 +112,14 @@ const bests = [
   },
 ];
 export const Selling = function ({products}) {
-  // console.log(products);
+  console.log(products);
   return (
     <div className="w-full">
       {/* <p className="font-semibold text-[1.2rem]">{title}</p> */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
         {products?.map((product, i) => {
           return (
-            <Link to="/{product.id}">
+            // <Link to="/product-view">
               <div key={product.id} className="w-full">
                 <div
                   key={i}
@@ -135,7 +135,7 @@ export const Selling = function ({products}) {
                   </button>
                 </div>
               </div>
-            </Link>
+            // </Link>
           );
         })}
       </div>

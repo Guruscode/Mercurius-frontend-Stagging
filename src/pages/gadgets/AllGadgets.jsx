@@ -100,7 +100,7 @@ const AllGadgets = () => {
                 className="flex flex-col items-center justify-center gap-4"
               >
                 <img
-                  className="cursor-pointer hover:scale-110"
+                  className="w-1/2 sm:w-fit cursor-pointer hover:scale-110"
                   src={item.img}
                   alt="/"
                 />
@@ -111,7 +111,7 @@ const AllGadgets = () => {
         </div>
         <div className="brands">
           <h2 className="font-semibold text-[1.2rem] my-4">Shop by Brand</h2>
-          <div className="my-4 grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="my-4 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4">
             {brands
               .filter((items) => items.category === "gadget")
               .map((items) => {

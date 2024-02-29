@@ -28,7 +28,7 @@ export default function Index() {
         <Selling />
       </div>
       <BrandsIndex />
-      <div className="p-2 sm:px-12">
+      <div className=" sm:px-12">
         <Gadget />
       </div>
       <BestSelling />

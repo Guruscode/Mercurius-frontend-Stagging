@@ -74,26 +74,25 @@ export default function Header() {
 
               <div className="flex justify-between gap-x-2 sm:gap-x-4 items-end pr-2 sm:ml-6 sm:pr-0">
                 <div className="">
-                  <a
-                    href="#"
+                  <Link
+                    to="/register"
                     className="flex flex-row justify-between items-stretch"
                   >
                     <BsPerson size={20} />
                     <p className="hidden md:block font-semibold">
-                      <Link to="/register">My&nbsp;Account</Link>
+                      My&nbsp;Account
                     </p>
-                  </a>
+                  </Link>
+                  {/* <a href="#"></a> */}
                 </div>
                 <div className="">
-                  <a
-                    href="#"
+                  <Link
+                    to="/cart"
                     className="flex flex-row justify-center items-stretch"
                   >
                     <BsCart3 size={20} />
-                    <p className="hidden md:block font-semibold">
-                      <Link to="/cart">Cart</Link>
-                    </p>
-                  </a>
+                    <p className="hidden md:block font-semibold">Cart</p>
+                  </Link>
                 </div>
               </div>
             </div>

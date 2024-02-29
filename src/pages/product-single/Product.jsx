@@ -3,29 +3,33 @@ import Accordion from "../product-listing/Accordion";
 import Footer from "../../components/molecules/Footers";
 import Header from "../../components/molecules/Header";
 import { Selling } from "../../components/molecules/Selling";
-export const Product = function () {
-  const[products, setProducts] = useState([]);
 
-  const fetchData = async () => {
-    try {
-      const data = await getProducts();
-      setProducts(data);
-    } catch (error) {
-      console.error("Error fetching users:", error);
-    } finally {
-     
-    }
-  };
+import Loader from "../../components/molecules/Loader"
+
+import { getProducts } from "../../api/Axios";
+export const Product = function () {
+
+
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    fetchData();
+    const fetchProducts = async () => {
+      try {
+        const data = await getProducts();
+        setProducts(data);
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
   }, []);
 
-  const getProducts = async () => {
-    const response = await fetch("https://fakestoreapi.com/products");
-    const products = await response.json();
-    return products;
-  };
-  console.log(products);
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <>
       <Header />

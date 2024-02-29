@@ -78,7 +78,7 @@ const AllBrands = () => {
   return (
     <div className="px-4 py-2 sm:px-12">
       <h2 className="font-semibold text-[1.2rem] my-4">Brands</h2>
-      <div className="grid grid-rows-3 grid-cols-4 gap-3">
+      <div className="grid grid-rows-3 grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
         {brands.map((items) => {
           return (
             <div
