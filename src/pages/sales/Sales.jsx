@@ -11,11 +11,76 @@ import CountDown from "../../components/molecules/CountDown";
 import { Selling } from "../../components/molecules/Selling";
 
 const apparel = [
-  { id: 1, src: Apparel1, product: "Blouse" },
-  { id: 2, src: Apparel2, product: "Coat" },
-  { id: 3, src: Apparel3, product: "Suits" },
-  { id: 4, src: Apparel4, product: "Jeans" },
-  { id: 5, src: Apparel5, product: "Trouser" },
+  {
+    id: 1,
+    name: "HP Spectre x360",
+    title: "Laptop  Intel Core i7, 512GB SSD",
+    src: Apparel1,
+    product: "Blouse",
+  },
+  {
+    id: 2,
+    name: "HP Spectre x360",
+    title: "Laptop  Intel Core i7, 512GB SSD",
+    src: Apparel2,
+    product: "Coat",
+  },
+  {
+    id: 3,
+    name: "HP Spectre x360",
+    title: "Laptop  Intel Core i7, 512GB SSD",
+    src: Apparel3,
+    product: "Suits",
+  },
+  {
+    id: 4,
+    name: "HP Spectre x360",
+    title: "Laptop  Intel Core i7, 512GB SSD",
+    src: Apparel4,
+    product: "Jeans",
+  },
+  {
+    id: 5,
+    name: "HP Spectre x360",
+    title: "Laptop  Intel Core i7, 512GB SSD",
+    src: Apparel5,
+    product: "Trouser",
+  },
+  {
+    id: 6,
+    name: "HP Spectre x360",
+    title: "Laptop  Intel Core i7, 512GB SSD",
+    src: Sale,
+    product: "Sport light",
+  },
+  {
+    id: 7,
+    name: "HP Spectre x360",
+    title: "Laptop  Intel Core i7, 512GB SSD",
+    src: Flash,
+    product: "Flash sale",
+  },
+  {
+    id: 8,
+    name: "HP Spectre x360",
+    title: "Laptop  Intel Core i7, 512GB SSD",
+    src: Sale,
+    product: "Sport light",
+  },
+  {
+    id: 9,
+    name: "HP Spectre x360",
+    title: "Laptop  Intel Core i7, 512GB SSD",
+    src: Sale,
+    product: "Sport light",
+  },
+  {
+    id: 10,
+    name: "HP Spectre x360",
+    title: "Laptop  Intel Core i7, 512GB SSD",
+    src: Apparel2,
+    product: "Coat",
+  },
 ];
 
 const Sales = () => {
@@ -34,16 +99,21 @@ const Sales = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-4">
           {apparel.map((item) => {
             return (
-              <figure className="relative rounded-t bg-gray-400/20 w-full">
-                <p className="p-2">Tops</p>
+              <figure
+                key={item.id}
+                className="relative rounded-t bg-white/80 w-full min-h-[150px]"
+              >
+                <p className="absolute w-fit p-2 bg-red-800 text-white text-sm">
+                  Tops
+                </p>
                 <img
                   className="max-h-[120px] block mx-auto p-2"
                   src={item.src}
                   alt="/"
                 />
-                <figure className="bg-[#00003C] text-white p-2 text-center">
-                  <p className="font-semibold">Up to 50% Off</p>
-                </figure>
+                <figcaption className="absolute bottom-0 w-full bg-[#00003C] text-white p-2 text-center">
+                  <p className="font-semibold text-sm">Up to 50% Off</p>
+                </figcaption>
               </figure>
             );
           })}
@@ -64,7 +134,7 @@ const Sales = () => {
       </div>
       <div className="my-4">
         <p className="font-semibold text-[1.2rem]">Flash Sales</p>
-        <Selling />
+        <Selling products={apparel} />
       </div>
     </div>
   );

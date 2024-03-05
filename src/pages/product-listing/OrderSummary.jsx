@@ -3,9 +3,11 @@ import { BsArrowRight, BsCart3, BsStackOverflow } from "react-icons/bs";
 
 const OrderSummary = () => {
   return (
-    <div className="border basis-[35%] py-4 px-8 rounded-xl">
-      <h2 className="font-semibold text-[1.2rem] my-4">Order Summary</h2>
-      <form>
+    <div className="border sm:basis-[45%] p-2 sm:py-4 sm:px-2 lg:px-8 rounded">
+      <h2 className="font-semibold text-sm sm:text-[1.2rem] mb-4">
+        Order Summary
+      </h2>
+      <form className="text-sm sm:text-[1rem]">
         <div className="flex flex-col my-4">
           <label className="text-black/70" htmlFor="discount_code">
             Discount code / Promo Code

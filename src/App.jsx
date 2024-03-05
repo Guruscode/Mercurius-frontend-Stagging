@@ -14,6 +14,7 @@ import AccessoriesIndex from "./pages/accessories/AccessoriesIndex";
 import BrandsIndex from "./pages/brands/BrandsIndex";
 import GadgetIndex from "./pages/gadgets/GadgetIndex";
 import SalesIndex from "./pages/sales/SalesIndex";
+import ProductDescription from "./pages/product-listing/ProductDesc";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgetPassword" element={<ForgetPassword />} />
+          <Route path="/productDesc" element={<ProductDescription />} />
 
           {/* Categories */}
           <Route path="/new" element={<NewIndex />} />

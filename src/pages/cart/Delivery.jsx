@@ -21,38 +21,43 @@ const addressList = [
 
 const Delivery = () => {
   return (
-    <main className="mx-12 my-4">
-      <h1 className="font-semibold text-2xl my-4">Select Address</h1>
-      <div className="flex flex-col rounded-md border p-8">
+    <main className="p-2 sm:mx-12 my-2">
+      <h1 className="font-semibold sm:text-2xl my-4">Select Address</h1>
+      <div className="flex flex-col rounded-md border p-3 sm:p-6">
         {addressList.map((address) => {
           return (
             <div
               key={address.id}
-              className="flex flex-row justify-between p-8 bg-black/10 my-4 mx-4 rounded"
+              className="flex flex-col sm:flex-row flex-wrap justify-between p-3 sm:p-6 bg-black/10 mb-4 sm:mx-4 rounded"
             >
-              <div className="flex items-start justify-start gap-2">
-                <input
-                  className="w-3 h-3 mt-3 cursor-pointer"
-                  type="radio"
-                  name="address"
-                  id="address"
-                />
-                <div className="">
-                  <div className="flex justify-start items-center gap-8">
-                    <p className="leading-8">{address.street}</p>
-                    <p className="text-[12px] text-white px-2 py-[0.2rem] rounded-md bg-black/90">
+              <div className="">
+                <div className="flex flex-col">
+                  <input
+                    className="w-3 h-3 mt-3 cursor-pointer self-end sm:self-start"
+                    type="radio"
+                    name="address"
+                    id="address"
+                  />
+                  <div className="flex flex-col-reverse sm:flex-row gap-2 items-start sm:items-center">
+                    <p className="sm:leading-8 text-sm">{address.street}</p>
+                    <p className="text-[12px] mt-2 sm:my-0 text-white px-2 py-[0.2rem] rounded-md bg-black/90">
                       {address.type}
                     </p>
                   </div>
-                  <p className="leading-8">{address.address}</p>
-                  <p className="leading-8">{address.phone}</p>
+                  <p className="sm:leading-8 text-sm">{address.address}</p>
+                  <p className="sm:leading-8 text-sm">{address.phone}</p>
                 </div>
               </div>
-              <div className="flex flex-row items-center justify-center gap-4">
-                <BsPencil className="text-black/90 hover:text-black cursor-pointer" />{" "}
+              <div className="flex flex-row items-center justify-end sm:justify-center gap-4">
+                <BsPencil
+                  className="text-black/90 hover:text-black cursor-pointer rounded-full hover:bg-black/50"
+                  aria-label="edit"
+                  size={20}
+                />
                 <BsX
-                  className="text-black/90 hover:text-black cursor-pointer"
-                  size={30}
+                  className="text-black/90 hover:text-black cursor-pointer rounded-full hover:bg-black/50"
+                  size={25}
+                  aria-label="delete"
                 />
               </div>
             </div>
@@ -65,11 +70,11 @@ const Delivery = () => {
           <div className="mt-1">
             <p>Add Address</p>
           </div>
-          <div className="absolute border-dashed border-b-2 h-8 -top-1 -z-10 w-3/4"></div>
+          <div className="absolute border-dashed border-b-2 h-8 -top-[9px] -z-10 w-3/4"></div>
         </div>
       </div>
 
-      <div className="flex justify-end items-center p-2 gap-4 mx-2 my-8">
+      <div className="flex justify-center sm:justify-end items-center p-2 gap-4 mx-2 my-8">
         <button className="border py-1 px-3 rounded cursor-pointer transition duration-300 hover:bg-black hover:text-white">
           Back
         </button>

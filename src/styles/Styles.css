@@ -18,8 +18,8 @@
 .review_bar::-webkit-scrollbar,
 .cart::-webkit-scrollbar,
 .hide_bar::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 3px;
+  height: 3px;
 }
 .review_bar::-webkit-scrollbar-thumb,
 .cart::-webkit-scrollbar-thumb {

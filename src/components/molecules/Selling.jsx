@@ -1,14 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
-import Img1 from "../../assets/images/pro1.png";
-import Img2 from "../../assets/images/pro2.png";
-import Img3 from "../../assets/images/pro3.png";
-import Img4 from "../../assets/images/pro4.png";
-import Img5 from "../../assets/images/pro5.png";
-import Img6 from "../../assets/images/pro6.png";
-import Img7 from "../../assets/images/pro7.png";
-import Img8 from "../../assets/images/pro8.png";
+// import Img1 from "../../assets/images/pro1.png";
+// import Img2 from "../../assets/images/pro2.png";
+// import Img3 from "../../assets/images/pro3.png";
+// import Img4 from "../../assets/images/pro4.png";
+// import Img5 from "../../assets/images/pro5.png";
+// import Img6 from "../../assets/images/pro6.png";
+// import Img7 from "../../assets/images/pro7.png";
+// import Img8 from "../../assets/images/pro8.png";
 import Img9 from "../../assets/images/pro9.png";
 import Img10 from "../../assets/images/pro10.png";
 import Img11 from "../../assets/images/pro11.png";
@@ -23,64 +23,64 @@ import Laptop from "../../assets/images/laptops.png";
 import Watch from "../../assets/images/watches.png";
 import { BsHeart } from "react-icons/bs";
 
-const contents = [
-  {
-    id: 1,
-    img: Img1,
-    name: "Apple iPhone 14 Pro Max",
-    details: "128GB Deep Purple (MQ9T3RX/A)",
-    price: "$900",
-  },
-  {
-    id: 2,
-    img: Img2,
-    name: "Apple iPhone 14 Pro Max",
-    details: "128GB Deep Purple (MQ9T3RX/A)",
-    price: "$900",
-  },
-  {
-    id: 3,
-    img: Img3,
-    name: "Apple iPhone 14 Pro Max",
-    details: "128GB Deep Purple (MQ9T3RX/A)",
-    price: "$900",
-  },
-  {
-    id: 4,
-    img: Img4,
-    name: "Apple iPhone 14 Pro Max",
-    details: "128GB Deep Purple (MQ9T3RX/A)",
-    price: "$900",
-  },
-  {
-    id: 5,
-    img: Img5,
-    name: "Apple iPhone 14 Pro Max",
-    details: "128GB Deep Purple (MQ9T3RX/A)",
-    price: "$900",
-  },
-  {
-    id: 6,
-    img: Img6,
-    name: "Apple iPhone 14 Pro Max",
-    details: "128GB Deep Purple (MQ9T3RX/A)",
-    price: "$900",
-  },
-  {
-    id: 7,
-    img: Img7,
-    name: "Apple iPhone 14 Pro Max",
-    details: "128GB Deep Purple (MQ9T3RX/A)",
-    price: "$900",
-  },
-  {
-    id: 8,
-    img: Img8,
-    name: "Apple iPhone 14 Pro Max",
-    details: "128GB Deep Purple (MQ9T3RX/A)",
-    price: "$900",
-  },
-];
+// const contents = [
+//   {
+//     id: 1,
+//     img: Img1,
+//     name: "Apple iPhone 14 Pro Max",
+//     details: "128GB Deep Purple (MQ9T3RX/A)",
+//     price: "$900",
+//   },
+//   {
+//     id: 2,
+//     img: Img2,
+//     name: "Apple iPhone 14 Pro Max",
+//     details: "128GB Deep Purple (MQ9T3RX/A)",
+//     price: "$900",
+//   },
+//   {
+//     id: 3,
+//     img: Img3,
+//     name: "Apple iPhone 14 Pro Max",
+//     details: "128GB Deep Purple (MQ9T3RX/A)",
+//     price: "$900",
+//   },
+//   {
+//     id: 4,
+//     img: Img4,
+//     name: "Apple iPhone 14 Pro Max",
+//     details: "128GB Deep Purple (MQ9T3RX/A)",
+//     price: "$900",
+//   },
+//   {
+//     id: 5,
+//     img: Img5,
+//     name: "Apple iPhone 14 Pro Max",
+//     details: "128GB Deep Purple (MQ9T3RX/A)",
+//     price: "$900",
+//   },
+//   {
+//     id: 6,
+//     img: Img6,
+//     name: "Apple iPhone 14 Pro Max",
+//     details: "128GB Deep Purple (MQ9T3RX/A)",
+//     price: "$900",
+//   },
+//   {
+//     id: 7,
+//     img: Img7,
+//     name: "Apple iPhone 14 Pro Max",
+//     details: "128GB Deep Purple (MQ9T3RX/A)",
+//     price: "$900",
+//   },
+//   {
+//     id: 8,
+//     img: Img8,
+//     name: "Apple iPhone 14 Pro Max",
+//     details: "128GB Deep Purple (MQ9T3RX/A)",
+//     price: "$900",
+//   },
+// ];
 const bests = [
   {
     id: 9,
@@ -114,10 +114,8 @@ const bests = [
 export const Selling = function ({ products }) {
   console.log(products);
   return (
-    <div className="w-full h-full bg-red-500 relative">
-      <p>Produces</p>
-      {/* <p className="font-semibold text-[1.2rem]">{title}</p> */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+    <div className="">
+      <div className="grid grid-cols-2 sm:grid-cols-[repeat(3,minmax(0,300px))] md:grid-cols-[repeat(5,minmax(0,300px))] gap-2">
         {products?.map((product, i) => {
           return (
             // <Link to="/product-view">
@@ -127,12 +125,12 @@ export const Selling = function ({ products }) {
                 className="p-4 bg-[#f6f6f6] w-full flex flex-col items-center justify-center"
               >
                 <BsHeart className="w-4 h-4 self-end cursor-pointer text-black/40" />
-                <img className="w-[80%]] my-4" src={product.image} alt="" />
+                <img className=" max-h-[120px] my-4" src={product.src} alt="" />
                 <p className="w-[80%] text-center text-sm">{product.name}</p>
                 <p className="text-sm font-semibold">{product.price}</p>
-                <p className="text-sm font-semibold">{product.title}</p>
+                <p className="text-sm font-semibold">{product.color}</p>
                 <button className="text-sm text-white bg-[#1b1b1b] hover:bg-[#1e1e1ebb]/70 p-2 mt-2 rounded-md">
-                  Add to Cart
+                  Add&nbsp;to&nbsp;Cart
                 </button>
               </div>
             </div>
