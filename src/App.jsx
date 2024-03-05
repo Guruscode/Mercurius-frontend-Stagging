@@ -5,8 +5,8 @@ import { Product } from "./pages/product-single/Product";
 
 import Index from "./pages/landingpage";
 import ProductIndex from "./pages/product-listing/ProductIndex";
-import Register from "./pages/auth/Register";
-import Login from "./pages/auth/Login";
+import Signup from "./pages/auth/Signup";
+import Signin from "./pages/auth/Signin";
 import ForgetPassword from "./pages/auth/ForgetPassword";
 import NewIndex from "./pages/newIn/NewIndex";
 import ApparelIndex from "./pages/apparel/ApparelIndex";
@@ -25,8 +25,8 @@ function App() {
           <Route path="/cart" element={<CartIndex />} />
           <Route path="/product" element={<Product />} />
           <Route path="/product-view" element={<ProductIndex />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/signin" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/forgetPassword" element={<ForgetPassword />} />
           <Route path="/productDesc" element={<ProductDescription />} />
 
