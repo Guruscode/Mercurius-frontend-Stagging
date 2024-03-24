@@ -61,7 +61,7 @@ const Cart = () => {
       </h2>
       <div className="flex flex-col md:flex-row gap-4 md:gap-8">
         <div className="sm:basis-[55%] overflow-y-auto max-h-[75vh] cart scrollbar-hide">
-          {products.map((item, i) => {
+          {products?.map((item, i) => {
             return (
               <div
                 key={i}

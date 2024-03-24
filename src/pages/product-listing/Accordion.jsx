@@ -7,7 +7,7 @@ export default function Accordion() {
   const [brandOpen, setBrandOpen] = useState(false);
   const [memoryOpen, setMemoryOpen] = useState(false);
   return (
-    <div className="w-[25%] hidden md:block">
+    <div className="hidden md:block">
       {/* Price */}
       <div className="my-4">
         <button
@@ -38,10 +38,11 @@ export default function Accordion() {
                     From
                   </label>
                   <input
-                    className="border p-1 rounded-md outline-none w-24 text-end"
+                    className="border p-1 rounded-md outline-none text-end w-20"
                     type="text"
                     name="from"
                     id="from"
+                    placeholder="$000"
                   />
                 </div>
                 <div className="text-[#a7a7a7] mt-4">—</div>
@@ -50,10 +51,11 @@ export default function Accordion() {
                     To
                   </label>
                   <input
-                    className="border p-1 rounded-md outline-none w-24 text-end"
+                    className="border p-1 rounded-md outline-none text-end w-20"
                     type="text"
                     name="to"
                     id="to"
+                    placeholder="$999"
                   />
                 </div>
               </div>

@@ -1,5 +1,5 @@
 import { Disclosure } from "@headlessui/react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import {
   BsJustifyLeft,
@@ -7,7 +7,7 @@ import {
   BsPerson,
   BsSearch,
   BsCart3,
-  BsChevronDown,
+  // BsChevronDown,
 } from "react-icons/bs";
 
 const navigation = [
@@ -75,7 +75,7 @@ export default function Header() {
               <div className="flex justify-between gap-x-2 sm:gap-x-4 items-end pr-2 sm:ml-6 sm:pr-0">
                 <div className="">
                   <Link
-                    to="/register"
+                    to="/signin"
                     className="flex flex-row justify-between items-stretch"
                   >
                     <BsPerson size={20} />
@@ -108,20 +108,15 @@ export default function Header() {
                   />
                 </div> */}
                 <div className="justify-self-center">
-                  {navigation.map((item) => (
-                    <a
+                  {navigation?.map((item) => (
+                    <NavLink
                       key={item.name}
-                      href={item.href}
-                      className={classNames(
-                        item.current
-                          ? "border-b-2 border-black transition-all"
-                          : "text-black hover:border-b-2 hover:border-black",
-                        "px-3 py-2 font-medium"
-                      )}
+                      to={item.href}
+                      className={`px-3 py-2 font-medium`}
                       aria-current={item.current ? "page" : undefined}
                     >
                       {item.name}
-                    </a>
+                    </NavLink>
                   ))}
                 </div>
               </div>

@@ -93,7 +93,7 @@ const AllGadgets = () => {
       <h2 className="font-semibold text-[1.2rem] my-4">Shop by Category</h2>
       <div className="">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {gadgets.map((item) => {
+          {gadgets?.map((item) => {
             return (
               <div
                 key={item.key}

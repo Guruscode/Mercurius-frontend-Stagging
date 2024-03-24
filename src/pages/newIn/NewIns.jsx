@@ -22,7 +22,7 @@ const NewIns = () => {
       <h2 className="font-semibold text-[1.2rem] my-4">Shop by Category</h2>
       <div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 justify-center items-center">
-          {apparel.map((item) => {
+          {apparel?.map((item) => {
             return (
               <div
                 key={item.id}

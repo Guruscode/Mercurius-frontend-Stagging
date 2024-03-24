@@ -94,7 +94,7 @@ const Apparels = () => {
         <div className="my-4 grid">
           <h2 className="font-semibold text-[1.2rem] my-4">Men</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
-            {apparel.map((item) => {
+            {apparel?.map((item) => {
               return (
                 <div className="text-center flex flex-col items-center justify-center">
                   <figure className="w-1/2 sm:w-[180px] sm:h-[180px] md:bg-gray-100 rounded-full flex flex-col justify-center items-center">
@@ -109,7 +109,7 @@ const Apparels = () => {
         <div className="my-4 grid">
           <h2 className="font-semibold text-[1.2rem] my-4">Women</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 justify-center items-center">
-            {apparel.map((item) => {
+            {apparel?.map((item) => {
               return (
                 <div className="text-center flex flex-col items-center justify-center">
                   <figure className="w-1/2 sm:w-[180px] sm:h-[180px] md:bg-gray-100 rounded-full flex flex-col justify-center items-center">
@@ -124,7 +124,7 @@ const Apparels = () => {
         <div className="my-4 grid">
           <h2 className="font-semibold text-[1.2rem] my-4">Kids</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 justify-center items-center">
-            {apparel.map((item) => {
+            {apparel?.map((item) => {
               return (
                 <div className="text-center flex flex-col items-center justify-center">
                   <figure className="w-1/2 sm:w-[180px] sm:h-[180px] md:bg-gray-100 rounded-full flex flex-col justify-center items-center">

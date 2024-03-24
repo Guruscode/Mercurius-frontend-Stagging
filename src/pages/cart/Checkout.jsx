@@ -39,7 +39,7 @@ const Checkout = () => {
           <h2 className="font-semibold text-[1.2rem] mb-4">Summary</h2>
           {/* All Items to Checkout */}
           <div className="overflow-y-auto">
-            {products.map((items, i) => {
+            {products?.map((items, i) => {
               return (
                 <div
                   key={i}

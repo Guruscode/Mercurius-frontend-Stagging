@@ -24,7 +24,7 @@ const Delivery = () => {
     <main className="p-2 sm:mx-12 my-2">
       <h1 className="font-semibold sm:text-2xl my-4">Select Address</h1>
       <div className="flex flex-col rounded-md border p-3 sm:p-6">
-        {addressList.map((address) => {
+        {addressList?.map((address) => {
           return (
             <div
               key={address.id}

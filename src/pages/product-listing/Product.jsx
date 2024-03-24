@@ -1,5 +1,6 @@
 import Accordion from "./Accordion";
 import { Selling } from "../../components/molecules/Selling";
+import { contents } from "../../db_local/store";
 export const Products = function () {
   return (
     <div className="flex flex-row gap-x-4 mt-12 scrollbar-hide">

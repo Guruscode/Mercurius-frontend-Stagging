@@ -73,7 +73,9 @@ export default function Register() {
                 placeholder="password"
               />
             </div>
-            <p className="font-bold -mt-1 cursor-pointer">Forgot password?</p>
+            <Link to="/resetPassword">
+              <p className="font-bold -mt-1 cursor-pointer">Forgot password?</p>
+            </Link>
             <button className="bg-[#00003C] text-white font-semibold w-full my-4 rounded-xl px-4 py-3 outline-none">
               Sign In
             </button>

@@ -10,15 +10,16 @@ import Women from "../../assets/images/women.png";
 import Male from "../../assets/images/swag.png";
 import Female from "../../assets/images/model.png";
 import MercuriusWeek from "../../assets/images/merc.png";
+
 export const Category = function () {
   return (
-    <div className="py-4 px-2 sm:mx-12 my-4 bg-white/55">
+    <div className="mx-6 md:mx-12 my-4 bg-white/55">
       <div className="flex flex-row justify-start">
         <p className="text-[1.1rem] font-semibold">Shop by Category</p>
       </div>
       <div>
         <p className="flex flex-row gap-2 items-center justify-end text-[.8rem] mb-3">
-          <a href="#">All categories</a>
+          <a href="/#">All categories</a>
           <BsArrowRight />
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -54,7 +55,7 @@ export const Category = function () {
 
 export const MaleFemaleCategory = function () {
   return (
-    <div className="my-4 p-2 sm:px-12">
+    <div className="my-4 mx-6 md:mx-12">
       <div className="xl:grid grid-cols-1 sm:grid-cols-2 gap-2">
         <div className="hidden xl:grid grid-rows-[100px_minmax(50px,_200px)_100px] gap-2">
           {/* item 1 */}
@@ -132,7 +133,7 @@ export const MaleFemaleCategory = function () {
               <h3 className="text-4xl font-semibold text-pretty">SALE</h3>
               <p>#mercuriusweek</p>
             </div>
-            <img className="" src={MercuriusWeek} alt="" />
+            <img className="object-cover " src={MercuriusWeek} alt="" />
           </div>
           <div className="flex flex-row items-center justify-center gap-1 my-2">
             <div

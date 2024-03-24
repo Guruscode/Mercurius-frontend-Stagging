@@ -1,140 +1,43 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { BsHeart } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
-// import Img1 from "../../assets/images/pro1.png";
-// import Img2 from "../../assets/images/pro2.png";
-// import Img3 from "../../assets/images/pro3.png";
-// import Img4 from "../../assets/images/pro4.png";
-// import Img5 from "../../assets/images/pro5.png";
-// import Img6 from "../../assets/images/pro6.png";
-// import Img7 from "../../assets/images/pro7.png";
-// import Img8 from "../../assets/images/pro8.png";
-import Img9 from "../../assets/images/pro9.png";
-import Img10 from "../../assets/images/pro10.png";
-import Img11 from "../../assets/images/pro11.png";
-import Img12 from "../../assets/images/pro12.png";
-
-// Single Images
 import Accessories from "../../assets/images/accessories.png";
 import Ipad from "../../assets/images/ipad.png";
 import Samsung from "../../assets/images/samsung.png";
 import Macbook from "../../assets/images/macbook.png";
 import Laptop from "../../assets/images/laptops.png";
 import Watch from "../../assets/images/watches.png";
-import { BsHeart } from "react-icons/bs";
 
-// const contents = [
-//   {
-//     id: 1,
-//     img: Img1,
-//     name: "Apple iPhone 14 Pro Max",
-//     details: "128GB Deep Purple (MQ9T3RX/A)",
-//     price: "$900",
-//   },
-//   {
-//     id: 2,
-//     img: Img2,
-//     name: "Apple iPhone 14 Pro Max",
-//     details: "128GB Deep Purple (MQ9T3RX/A)",
-//     price: "$900",
-//   },
-//   {
-//     id: 3,
-//     img: Img3,
-//     name: "Apple iPhone 14 Pro Max",
-//     details: "128GB Deep Purple (MQ9T3RX/A)",
-//     price: "$900",
-//   },
-//   {
-//     id: 4,
-//     img: Img4,
-//     name: "Apple iPhone 14 Pro Max",
-//     details: "128GB Deep Purple (MQ9T3RX/A)",
-//     price: "$900",
-//   },
-//   {
-//     id: 5,
-//     img: Img5,
-//     name: "Apple iPhone 14 Pro Max",
-//     details: "128GB Deep Purple (MQ9T3RX/A)",
-//     price: "$900",
-//   },
-//   {
-//     id: 6,
-//     img: Img6,
-//     name: "Apple iPhone 14 Pro Max",
-//     details: "128GB Deep Purple (MQ9T3RX/A)",
-//     price: "$900",
-//   },
-//   {
-//     id: 7,
-//     img: Img7,
-//     name: "Apple iPhone 14 Pro Max",
-//     details: "128GB Deep Purple (MQ9T3RX/A)",
-//     price: "$900",
-//   },
-//   {
-//     id: 8,
-//     img: Img8,
-//     name: "Apple iPhone 14 Pro Max",
-//     details: "128GB Deep Purple (MQ9T3RX/A)",
-//     price: "$900",
-//   },
-// ];
-const bests = [
-  {
-    id: 9,
-    img: Img9,
-    name: "Apple iPhone 14 Pro Max",
-    details: "128GB Deep Purple (MQ9T3RX/A)",
-    price: "$900",
-  },
-  {
-    id: 10,
-    img: Img10,
-    name: "Apple iPhone 14 Pro Max",
-    details: "128GB Deep Purple (MQ9T3RX/A)",
-    price: "$900",
-  },
-  {
-    id: 11,
-    img: Img11,
-    name: "Apple iPhone 14 Pro Max",
-    details: "128GB Deep Purple (MQ9T3RX/A)",
-    price: "$900",
-  },
-  {
-    id: 12,
-    img: Img12,
-    name: "Apple iPhone 14 Pro Max",
-    details: "128GB Deep Purple (MQ9T3RX/A)",
-    price: "$900",
-  },
-];
 export const Selling = function ({ products }) {
-  console.log(products);
   return (
     <div className="">
       <div className="grid grid-cols-2 sm:grid-cols-[repeat(3,minmax(0,300px))] md:grid-cols-[repeat(5,minmax(0,300px))] gap-2">
         {products?.map((product, i) => {
           return (
-            // <Link to="/product-view">
-            <div key={product.id} className="w-full">
-              <div
-                key={i}
-                className="p-4 bg-[#f6f6f6] w-full flex flex-col items-center justify-center"
-              >
-                <BsHeart className="w-4 h-4 self-end cursor-pointer text-black/40" />
-                <img className=" max-h-[120px] my-4" src={product.src} alt="" />
-                <p className="w-[80%] text-center text-sm">{product.name}</p>
-                <p className="text-sm font-semibold">{product.price}</p>
-                <p className="text-sm font-semibold">{product.color}</p>
-                <button className="text-sm text-white bg-[#1b1b1b] hover:bg-[#1e1e1ebb]/70 p-2 mt-2 rounded-md">
-                  Add&nbsp;to&nbsp;Cart
-                </button>
+            <Link to={`/product-view/${product.id}`}>
+              <div key={product.id} className="w-full">
+                <div
+                  key={i}
+                  className="relative p-4 bg-[#f6f6f6] w-full min-h-[100%] flex flex-col items-center justify-center"
+                >
+                  <BsHeart className="w-4 h-4 self-end cursor-pointer text-black/40" />
+                  <img
+                    className=" min-w-[100px] max-w-[120px] min-h-[100px] max-h-[100px] my-4"
+                    src={product.src || product.image}
+                    alt="product "
+                  />
+                  <p className="w-[80%] text-center text-sm">{product.name}</p>
+                  <p className="text-sm font-semibold">{`$${product.price}`}</p>
+                  <p className="text-sm font-semibold">
+                    {product?.color || product?.title?.slice}
+                  </p>
+                  <button className="relative -bottom-2 text-sm text-white bg-[#1b1b1b] hover:bg-[#1e1e1ebb]/70 p-2 mt-2 rounded-md">
+                    Add&nbsp;to&nbsp;Cart
+                  </button>
+                </div>
               </div>
-            </div>
-            // </Link>
+            </Link>
           );
         })}
       </div>
@@ -142,21 +45,21 @@ export const Selling = function ({ products }) {
   );
 };
 
-export const BestSelling = function () {
+export const BestSelling = function ({ products }) {
   return (
-    <div className="mx-2 sm:mx-12 my-4">
+    <div className="mx-6 md:mx-12 my-4">
       <div className="flex flex-row justify-start">
         <h3 className="text-[1.1rem] font-semibold">Best Selling</h3>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-        {bests.map((product, i) => {
+        {products?.map((product, i) => {
           return (
             <div
               key={i}
               className="w-full p-4 bg-[#f6f6f6] flex flex-col items-center justify-center"
             >
               <BsHeart className="w-4 h-4 self-end cursor-pointer text-black/40" />
-              <img className="w-[50%] my-4" src={product.img} alt="" />
+              <img className="w-[50%] my-4" src={product.src} alt="" />
               <p className="w-[80%] text-center text-sm">{product.name}</p>
               <p className="text-sm font-semibold">{product.price}</p>
               <button className="text-sm text-white bg-[#1e1e1e] hover:bg-[#1e1e1ebb]/70 p-2 mt-2 rounded-md">

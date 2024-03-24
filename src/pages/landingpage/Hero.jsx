@@ -5,124 +5,8 @@ import {
   BsChevronCompactRight,
   BsArrowRight,
 } from "react-icons/bs";
-import Image from "../../assets/images/Iphone.png";
-import Swag from "../../assets/images/swag.png";
-import Model from "../../assets/images/model.png";
-import Friends from "../../assets/images/friends.png";
 import "../../styles/Styles.css";
-// import Background from "../../assets/images/backdrop.jpg";
-
-const slides = [
-  {
-    title: "SHOP GADGETS & ACCESSORIES",
-    pitch:
-      "Shop the Latest Gadgets and Accessories for a Tech-Infused Lifestyle",
-    cta: "View More",
-    img: Image,
-  },
-  {
-    title: "SHOP GADGETS & ACCESSORIES",
-    pitch:
-      "Shop the Latest Gadgets and Accessories for a Tech-Infused Lifestyle",
-    cta: "View More",
-    img: Image,
-  },
-  {
-    title: "SHOP GADGETS & ACCESSORIES",
-    pitch:
-      "Shop the Latest Gadgets and Accessories for a Tech-Infused Lifestyle",
-    cta: "View More",
-    img: Image,
-  },
-  {
-    title: "SHOP GADGETS & ACCESSORIES",
-    pitch:
-      "Shop the Latest Gadgets and Accessories for a Tech-Infused Lifestyle",
-    cta: "View More",
-    img: Image,
-  },
-];
-
-const items = [
-  {
-    id: 1,
-    title: "Apparel",
-    pitch: "Buy now, Save 30%",
-    url: Image,
-  },
-  {
-    id: 2,
-    title: "Gadget",
-    pitch: "Buy now, Save 30%",
-    url: Friends,
-  },
-  {
-    id: 3,
-    title: "Accessories",
-    pitch: "Buy now, Save 30%",
-    url: Model,
-  },
-  {
-    id: 4,
-    title: "New Arrivals",
-    pitch: "Buy now, Save 30%",
-    url: Swag,
-  },
-  {
-    id: 5,
-    title: "Furnitures",
-    pitch: "Buy now, Save 30%",
-    url: Friends,
-  },
-  {
-    id: 6,
-    title: "Utencils",
-    pitch: "Buy now, Save 30%",
-    url: Model,
-  },
-  {
-    id: 7,
-    title: "Wine",
-    pitch: "Buy now, Save 30%",
-    url: Swag,
-  },
-  {
-    id: 8,
-    title: "Product",
-    pitch: "Buy now, Save 30%",
-    url: Friends,
-  },
-  {
-    id: 9,
-    title: "Product",
-    pitch: "Buy now, Save 30%",
-    url: Image,
-  },
-  {
-    id: 10,
-    title: "Apparel",
-    pitch: "Buy now, Save 30%",
-    url: Image,
-  },
-  {
-    id: 11,
-    title: "Gadget",
-    pitch: "Buy now, Save 30%",
-    url: Friends,
-  },
-  {
-    id: 12,
-    title: "Accessories",
-    pitch: "Buy now, Save 30%",
-    url: Model,
-  },
-  {
-    id: 13,
-    title: "New Arrivals",
-    pitch: "Buy now, Save 30%",
-    url: Swag,
-  },
-];
+import { slides, items } from "../../db_local/store";
 
 export const Slider = function ({
   autoSlide = false,
@@ -157,25 +41,27 @@ export const Slider = function ({
   }, [currentIndex]);
 
   return (
-    <div className="relative w-full h-[470px] m-auto bg-white/40 group px-2 sm:px-12 mt-1">
+    <div className="relative w-full h-[470px] m-auto bg-white/40 group px-6 md:px-12 mt-1">
       <div className="w-full h-full duration-1000 bg-cover bg-no-repeat flex flex-col justify-center items-center sm:items-start gap-1 px-4 sm:pl-[5rem] bg-black/95 rounded-t">
         <img
-          src={slides[currentIndex].img}
+          src={slides[currentIndex].src}
           alt="/"
-          className="hidden sm:block absolute right-[10%] md:w-[25%] bottom-0"
+          className="hidden sm:block absolute right-[10%] w-[0] md:w-[25%] xl:max-w-[16%] xxl-max-w-[15%] bottom-0"
         />
-        <h3 className="font-semibold leading-tight text-2xl sm:text-5xl w-full sm:w-[50%] text-[#fff] text-center sm:text-left">
-          {slides[currentIndex].title}
-        </h3>
-        <p className="semibold leading-8 text-[1.1rem] w-[70%] sm:w-[40%] text-[#fff] text-center sm:text-left">
-          {slides[currentIndex].pitch}
-        </p>
-        {slides[currentIndex].cta ? (
-          <button className="bg-white/90 hover:bg-black/50 transition-colors duration-300 w-fit py-2 px-4 border-2 border-white/50 rounded-md text-black hover:text-white my-4 flex items-center">
-            {slides[currentIndex].cta}
-            <BsArrowRight className=" mx-2 inline-block" />
-          </button>
-        ) : null}
+        <div className="w-full lg:w-1/2">
+          <h3 className="font-semibold leading-tight text-[1.2rem] sm:text-2xl md:text-5xl w-full md:w-[70%] text-[#fff] text-center sm:text-left">
+            {slides[currentIndex].title}
+          </h3>
+          <p className="w-[80%] mx-auto sm:mx-0 semibold leading-8 text-[1.1rem] text-[#fff] text-center sm:text-left">
+            {slides[currentIndex].pitch}
+          </p>
+          {slides[currentIndex].cta ? (
+            <button className="bg-white/90 hover:bg-black/50 transition-colors duration-300 w-fit py-2 px-4 border-2 border-white/50 rounded-md text-black hover:text-white my-4 flex items-center mx-auto sm:mx-0">
+              {slides[currentIndex].cta}
+              <BsArrowRight className=" mx-2 inline-block" />
+            </button>
+          ) : null}
+        </div>
       </div>
       {/* Arrow Button Left */}
       <div
@@ -221,7 +107,7 @@ export const ItemSelling = function () {
   };
 
   return (
-    <div className="relative flex items-center my-4 sm:px-12 mx-2 sm:mx-12 bg-blue-200">
+    <div className="relative flex items-center my-4 mx-6 md:mx-12 bg-blue-200">
       <BsChevronCompactLeft
         size={30}
         className="cursor-pointer block absolute h-full p-2 text-white w-[4%] left-0"
@@ -232,12 +118,9 @@ export const ItemSelling = function () {
         className="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth hide_bar"
       >
         <div className="flex flex-row flex-nowrap items-center justify-center gap-4 py-4 px-8">
-          {items.map((item) => (
-            <Link to="/product">
-              <figure
-                key={item.id}
-                className="flex items-center hover:scale-105 duration-300 ease-in-out"
-              >
+          {items?.map((item) => (
+            <Link key={item.id} to={`/product/${item.id}`}>
+              <figure className="flex items-center hover:scale-105 duration-300 ease-in-out">
                 <img
                   className="max-w-[90px] min-h-[100px] rounded-xl inline-block p-2 cursor-pointer "
                   src={item.url}

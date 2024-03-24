@@ -10,49 +10,38 @@ import {
   BsChevronRight,
 } from "react-icons/bs";
 
-export const ProductView = () => {
+export const ProductView = ({ product }) => {
   const [counter, setCounter] = useState(0);
+  console.log(product);
   return (
     <div className="p-2 md:mx-12">
       <div className="flex flex-col md:flex-row bg-white/70">
         {/* Product */}
         <div className="w-full md:w-[45%] flex flex-col-reverse md:flex-row justify-start items-center sm:gap-3">
           <div className="w-fit flex flex-row md:flex-col justify-center sm:justify-start gap-3 p-2 sm:min-h-[85%]">
-            <img
-              className="rounded sm:rounded-l-md border-gray w-1/12 sm:w-20 cursor-pointer"
-              src={Model}
-              alt="/"
-            />
-            <img
-              className="rounded sm:rounded-l-md border-gray w-1/12 sm:w-20 cursor-pointer"
-              src={Model}
-              alt="/"
-            />
-            <img
-              className="rounded sm:rounded-l-md border-gray w-1/12 sm:w-20 cursor-pointer"
-              src={Model}
-              alt="/"
-            />
-            <img
-              className="rounded sm:rounded-l-md border-gray w-1/12 sm:w-20 cursor-pointer"
-              src={Model}
-              alt="/"
-            />
-            <img
-              className="rounded sm:rounded-l-md border-gray w-1/12 sm:w-20 cursor-pointer"
-              src={Model}
-              alt="/"
-            />
+            {[...Array(3)].map((_, index) => (
+              <img
+                key={index}
+                className="rounded sm:rounded-l-md border-gray w-1/12 sm:w-20 cursor-pointer"
+                src={product?.image}
+                alt="/"
+              />
+            ))}
           </div>
+
           <div className="w-full flex justify-center items-center h-[85%] sm:px-2">
-            <img className="w-fit h-fit lg:min-h-[400px]" src={Model} alt="/" />
+            <img
+              className="max-w-full max-h-full lg:max-h-[400px]"
+              src={product?.image}
+              alt="/"
+            />
           </div>
         </div>
         {/* Pricing */}
         <div className="w-full md:w-[54%] sm:p-2 text-sm">
           <div className="sm:mt-4">
             <h3 className="text-2xl sm:text-4xl font-semibold mb-2">
-              Beige Cargo Pant
+              {product?.title}
             </h3>
             {<p className="text-[#333]">Brand: Nike</p>}
             <p className="flex items-center gap-x-1 text-[#333]">
@@ -60,17 +49,24 @@ export const ProductView = () => {
               <span className="flex ">
                 <BsStar />
               </span>
-              <span className="text-[.75rem] text-slate-400">128 ratings</span>
+              <span className="text-[.75rem] text-slate-400">
+                {product?.rating?.rate}
+              </span>
             </p>
-            <p className="text-[.75rem] text-slate-400">980+ sold</p>
+            <p className="text-[.75rem] text-slate-400">
+              {product?.rating?.count}+ sold
+            </p>
           </div>
           <hr className="w-full" />
           <div className="pricing my-3">
             <p className="text-3xl font-bold">
-              $30.00{" "}
-              <span className="font-light line-through text-[1.3rem] text-slate-400">
-                $40.00
-              </span>
+              ${product?.price}{" "}
+              {product && (
+                <span className="font-light line-through text-[1.3rem] text-slate-400">
+                  ${product.price * 1.25}{" "}
+                  {/* Manipulate the slash price based on the actual price */}
+                </span>
+              )}
             </p>
             <p className="text-[#333] text-sm">+$2.00 delivery fee to Lagos</p>
           </div>
@@ -181,7 +177,7 @@ export const ProductView = () => {
   );
 };
 
-export const ProductDescription = () => {
+export const ProductDescription = ({ product }) => {
   return (
     <div className="px-1 sm:mx-12 my-4 rounded">
       <div className="w-full md:w-2/3">
@@ -193,23 +189,7 @@ export const ProductDescription = () => {
         </Link>
         <hr />
         <div className="w-full md:w-2/3">
-          <p className="p-2 text-justify text-sm">
-            Introducing the Nike Beige Cargo Pant – a fusion of comfort and
-            style. Elevate your wardrobe with these versatile cargo pants,
-            blending athletic functionality with urban fashion.
-          </p>
-          <p className="p-2 text-justify text-sm">
-            The contemporary beige hue complements any look, while the relaxed
-            fit ensures comfort for everyday wear. Multiple cargo pockets
-            provide both style and practicality, and the iconic Nike swoosh logo
-            adds a touch of sporty sophistication.
-          </p>
-          <p className="p-2 text-justify text-sm">
-            With an elastic waistband for a customized fit, these pants
-            seamlessly transition from the gym to casual outings. Embrace the
-            perfect balance of comfort and fashion with the Nike Beige Cargo
-            Pant.
-          </p>
+          <p className="p-2 text-justify text-sm">{product?.description}</p>
         </div>
       </div>
     </div>

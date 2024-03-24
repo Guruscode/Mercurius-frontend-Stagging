@@ -75,12 +75,12 @@ export const Review = () => {
       <h3 className="text-[1.1rem] font-semibold">Reviews</h3>
       <div className="relative w-full md:w-2/3">
         <div className="review_bar my-4 p-3 max-h-[60vh] overflow-y-auto bg-gradient-to-b from-white from-[65%]  via-transparent to-[#33333370]">
-          {DATA.slice(0, reviews).map((product) => {
+          {DATA?.slice(0, reviews).map((product) => {
             return (
-              <div key={product.id} className="flex gap-x-4 mb-6">
+              <div key={product?.id} className="flex gap-x-4 mb-6">
                 <img
                   className="w-14 h-14 rounded-full"
-                  src={product.img}
+                  src={product?.img}
                   alt="/"
                 />
                 <div className="text-[#333]">
